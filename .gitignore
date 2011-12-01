@@ -1,0 +1,7 @@
+*.db
+*.swp
+*.pyc
+.DS_Store
+
+# Ignore virtualenv
+env
