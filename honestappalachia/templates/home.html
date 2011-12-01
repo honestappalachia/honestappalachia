@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+<link rel=stylesheet type=text/css href="{{ STATIC_URL }}css/home.css">
+{% endblock %}
+
+{% block content %}
+<h1 class="header">Honest Appalachia</h1>
+
+<img class="logo" src="{{ STATIC_URL }}img/logo.png" />
+
+<div class="nav">
+  <ol>
+    <li><a href="/news">News</a></li>
+    <li><a href="/upload">Upload</a></li>
+    <li><a href="/help">Help</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/donate">Donate</a></li>
+  </ol>
+</div>
+
+<p class="center">Interested in uploading? <a href="/help/uploading">Read this first.</a></p>
+{% endblock %}

@@ -1,0 +1,6 @@
+# Ignore local (deployment) settings.py
+local_settings.py
+
+# Ignore collected dir for testing staticfiles
+static_collected
+media

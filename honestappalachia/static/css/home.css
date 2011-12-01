@@ -1,0 +1,88 @@
+body {
+  font: 16px/1.5 'Palatino', serif;
+  background-color: white;
+  color: #333;
+}
+
+p {
+  margin-bottom:24px;
+}
+
+/* Homepage header */
+.header { text-align:center; font-size:3em; margin-bottom:8px;}
+
+/* Homepage logo */
+.logo { 
+  display: block;
+  margin: 0 auto;
+}
+
+/* Homepage navigation */
+/* Menu centering technique thanks to http://matthewjamestaylor.com/blog/beautiful-css-centered-menus-no-hacks-full-cross-browser-support */
+
+.nav {
+  float:left;
+  width:100%;
+  margin: 24px 0;
+  overflow:hidden;
+  position:relative;
+}
+
+.nav ol {
+  clear:left;
+  float:left;
+  list-style:none;
+  margin:0;
+  padding:0;
+  position:relative;
+  left:50%;
+  text-align:center;
+}
+
+.nav ol li {
+  list-style: none;
+  display:block;
+  float:left;
+  margin:0;
+  padding:0;
+  position:relative;
+  right:50%;
+}
+
+.nav ol li a {
+  display:block;
+  background: #333;
+  color: #ccc;
+  font: 16px/1.5 'Verdana', 'Arial', sans-serif;
+  padding:10px 20px;
+  border-right:1px #555 solid;
+  text-decoration:none;
+}
+
+.nav ol li a:hover {
+  background: #2580a2;
+  color: #fff;
+}
+
+.nav li:first-child a {
+  border-radius: 8px 0 0 8px;
+}
+
+.nav li:last-child a {
+  border-radius: 0 8px 8px 0;
+  border:none;
+}
+
+/* Round corners */
+
+.round {
+  -moz-border-radius:     10px;
+  -webkit-border-radius:  10px;
+  border-radius:          10px;
+}
+
+/* Center text */
+.center {
+  text-align: center;
+}
+

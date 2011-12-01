@@ -1,0 +1,16 @@
+body {
+  font: 16px/1.5 'Palatino', serif;
+  background-color: white;
+  color: #333;
+}
+
+p, img, ol, ul, h1, h2, h3, h4, h5, h6 {
+  margin-bottom:24px;
+}
+
+.document {
+  width:800px;
+  margin:0 auto;
+  margin-top:24px;
+  margin-bottom:24px;
+}
