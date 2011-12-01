@@ -23,7 +23,15 @@ class Page(models.Model):
         Converts any WikiWords into links
         '''
         import markdown
-        md = markdown.Markdown(safe_mode="escape")
+        md = markdown.Markdown(
+                extensions=['toc'],
+                extension_configs={
+                    'toc': [
+                        ('anchorlink', True),
+                    ],
+                },
+                safe_mode="escape",
+            )
         content_md = md.convert(self.content)
         self.rendered= wikify(content_md)
 
