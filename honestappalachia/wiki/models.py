@@ -32,6 +32,7 @@ class Page(models.Model):
                 extension_configs = {
                     'toc': [
                         ('anchorlink', True),
+                        ('title', 'Table of Contents'),
                     ],
                 },
             )

@@ -1,0 +1,84 @@
+body {
+  background: #fff;
+  color: #222;
+  font: 16px/1.5em "Lucida Grande",Helvetica,Arial,sans-serif;
+  /*font: 16px/1.5em "Palatino Linotype", Palatino, Georgia, serif; */
+  margin: 1.5em auto 0;
+  padding: 0;
+  width: 40em;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  color: #c00;
+}
+p,img,h1,h2,h3,h4,h5,h6 { margin-bottom:24px; }
+h1 {
+  font-size: 2em;
+  line-height: 0.75em;
+}
+h2 {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+h3 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+}
+h4 {
+  font-size: 1.125em;
+  line-height: 1.333em;
+}
+h5, h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+ul {
+  list-style: square inside;
+  margin-bottom:1.5em;
+}
+li > ul {
+  margin-left:1.5em;
+}
+input {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+textarea {
+  font-size: 1em;
+  height: 10em;
+  width: 100%;
+  max-width:100%;
+}
+.footer {
+  border-top: 1px solid #ccc;
+  color: #999;
+  font-size: 0.8333em;
+  line-height: 1.8em;
+  margin-top: 1.5em;
+}
+.errorlist {
+  color: #c00;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a:hover.toclink:after {
+  content:" ¶";
+}
+div.toc {
+  display:inline-block;
+  margin-bottom:1.5em;
+  background:#eee;
+  border:1px solid #aaa;
+  padding:8px;
+}
+div.toc ul {
+  margin-bottom:0;
+}
+span.toctitle {
+  font-weight:bold;
+}
