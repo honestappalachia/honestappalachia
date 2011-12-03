@@ -10,6 +10,7 @@ class Page(models.Model):
     name = models.CharField(max_length=100)
     content = models.TextField()
     rendered = models.TextField(editable=False)
+    toc = models.TextField(editable=False)
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
@@ -23,27 +24,23 @@ class Page(models.Model):
         Converts any WikiWords into links
         '''
         import markdown
+        from toc import genTOC, header_permalinks
+
+        # render self.content as Markdown
         md = markdown.Markdown(
-                extensions=['toc'],
-                extension_configs={
-                    'toc': [
-                        ('anchorlink', True),
-                    ],
-                },
                 safe_mode="escape",
             )
-        content_md = md.convert(self.content)
-        self.rendered= wikify(content_md)
-
-    def preprocess(self):
-        '''
-        Renders content into rendered
-        '''
-        self.render()
+        rend = md.convert(self.content)
+        # generate TOC
+        self.toc = genTOC(rend)
+        # convert headers to permalinks
+        rend = header_permalinks(rend)
+        # convert WikiWords to links, save in self.rendered
+        self.rendered = wikify(rend)
 
     def save(self, *args, **kwargs):
         '''
         Override save to add preprocessing
         '''
-        self.preprocess()
+        self.render()
         super(Page, self).save(*args, **kwargs)
