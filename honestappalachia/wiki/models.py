@@ -10,7 +10,6 @@ class Page(models.Model):
     name = models.CharField(max_length=100)
     content = models.TextField()
     rendered = models.TextField(editable=False)
-    toc = models.TextField(editable=False)
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
@@ -29,12 +28,14 @@ class Page(models.Model):
         # render self.content as Markdown
         md = markdown.Markdown(
                 safe_mode="escape",
+                extensions = ['toc'],
+                extension_configs = {
+                    'toc': [
+                        ('anchorlink', True),
+                    ],
+                },
             )
         rend = md.convert(self.content)
-        # generate TOC
-        self.toc = genTOC(rend)
-        # convert headers to permalinks
-        rend = header_permalinks(rend)
         # convert WikiWords to links, save in self.rendered
         self.rendered = wikify(rend)
 
