@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.views.generic.simple import direct_to_template
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -19,3 +20,9 @@ urlpatterns = patterns('',
     url(r'^$', direct_to_template, { 'template': 'home.html' }, name='home'),
     url(r'^wiki/', include('wiki.urls')),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^media/(?P<path>.*)$', 'django.views.static.serve',
+            { 'document_root': settings.MEDIA_ROOT }),
+    )

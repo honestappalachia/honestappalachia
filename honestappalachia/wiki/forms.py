@@ -1,6 +1,6 @@
 from django import forms as forms
 
-from models import Page
+from models import Page, MediaFile
 
 class PageForm(forms.Form):
     name = forms.CharField(max_length=255)
@@ -17,3 +17,7 @@ class PageForm(forms.Form):
             raise forms.ValidationError('Must be a WikiWord.')
 
         return name
+
+class MediaFileForm(forms.ModelForm):
+    class Meta:
+        model = MediaFile

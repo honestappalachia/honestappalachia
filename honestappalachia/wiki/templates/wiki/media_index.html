@@ -1,0 +1,17 @@
+{% extends 'wiki/base.html' %}
+
+{% block content %}
+  <h1>MediaFile Index</h1>
+  {% if mediafiles %}
+    <ul>
+      {% for mediafile in mediafiles %}
+      <li><a href="{{ mediafile.file.url }}">{{ mediafile.name }} ({{mediafile.type}})</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No files have been uploaded yet.</p>
+  {% endif %}
+
+  <p><a href="{% url media_upload %}">Upload a new file</a></p>
+
+{% endblock %}

@@ -2,9 +2,10 @@
 
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
+from django.http import HttpResponseRedirect
 
-from forms import PageForm
-from models import Page
+from forms import PageForm, MediaFileForm
+from models import Page, MediaFile
 
 def index(request):
     """Lists all pages stored in the wiki."""
@@ -57,4 +58,27 @@ def edit(request, name):
     }
 
     return render_to_response('wiki/edit.html',
+            RequestContext(request, context))
+
+def media_index(request):
+    mediafiles = MediaFile.objects.all()
+    return render_to_response('wiki/media_index.html',
+            { 'mediafiles': mediafiles },
+            RequestContext(request, {})
+        )
+
+def media_upload(request):
+    if request.method == 'POST':
+        form = MediaFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/wiki/media/') # TODO: something meaningful
+    else:
+        form = MediaFileForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render_to_response('wiki/media_upload.html',
             RequestContext(request, context))
