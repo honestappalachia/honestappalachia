@@ -74,9 +74,6 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '=jc&5(10y#(sng=&nc5h8lk%yo@_+nox45cbr1y)mckm+n&)9a'
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -147,3 +144,9 @@ LOGGING = {
         },
     }
 }
+
+# Import deployment-specific settings, if they exist
+try:
+    from local_settings import *
+except ImportError:
+    pass
