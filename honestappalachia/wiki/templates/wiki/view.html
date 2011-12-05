@@ -1,9 +1,19 @@
 {% extends 'wiki/base.html' %}
 
+{% block header %}
+	<h1><a href="../{{ page.name }}/" rel="bookmark">{{ page.name }}</a></h1>
+{% endblock %}
+{% block headermenu %}
+    {% if user.is_authenticated %}
+        {% if page.id %}
+            <a href="edit/">Edit this page</a>
+        {% else %}
+            <a href="edit/">Create this page</a>
+        {% endif %}
+    {% endif %}
+{% endblock %}
 
 {% block content %}
-	<h1><a href="../{{ page.name }}/" rel="bookmark">{{ page.name }}</a></h1>
-
 	{% if not page.id %}
 		<p>This page does not exist, <a href="edit/">create it now</a>?</p>
 	{% endif %}

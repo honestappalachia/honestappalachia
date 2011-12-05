@@ -15,6 +15,7 @@ class Page(models.Model):
     rendered = models.TextField(editable=False)
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
+    is_active = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.name

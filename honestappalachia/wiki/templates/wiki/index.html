@@ -1,17 +1,19 @@
 {% extends 'wiki/base.html' %}
 
+{% block header %}<h1>Index</h1>{% endblock %}
 
 {% block content %}
-	<h1>Index</h1>
-
 	{% if pages %}
 		<ul>
 			{% for page in pages %}
-				<li><a href="{{ page.name }}/">{{ page.name }}</a></li>
+				<li><a href="{% url view page.name %}">{{ page.name }}</a></li>
 			{% endfor %}
 		</ul>
 	{% else %}
-		<p><a href="NewPage/edit/">Create a new page</a>.</p>
+        <p><a href="{% url edit "NewPage" %}">Create a new page</a>.</p>
 	{% endif %}
 {% endblock %}
 
+{% block footer %}
+<a href="{% url edit "NewPage" %}">Add new page</a> |
+{% endblock %}

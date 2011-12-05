@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="body">
+      <div id="header">{% block header %}{% endblock %}</div>
       <div id="content">{% block content %}{% endblock %}</div>
       <p class="footer"><a href="{% url wiki.views.index %}">List all pages</a> | {% block footer %}{% endblock %}Powered by <a href="http://code.google.com/p/django-wiki/">Wiki</a></p>
     </div>
