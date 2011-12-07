@@ -53,6 +53,7 @@ textarea {
   height: 10em;
   width: 100%;
   max-width:100%;
+  outline:none;
 }
 .footer {
   border-top: 1px solid #ccc;
