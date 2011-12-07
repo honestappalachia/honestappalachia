@@ -21,3 +21,21 @@ class PageForm(forms.Form):
 class MediaFileForm(forms.ModelForm):
     class Meta:
         model = MediaFile
+
+
+class BulkUploadForm(forms.Form):
+    upload = forms.FileField(help_text=
+        "A zip archive of .md files, or a single .md file")
+    overwrite_exisiting = forms.BooleanField(required=False, help_text=
+        "If checked, uploaded files with the same name as existing Wiki pages \
+        will overwrite the content of the existing pages")
+
+    def clean_upload(self):
+        """Verify the upload file is a .zip or .md file"""
+        import re
+        upload = self.cleaned_data['upload']
+        valid = lambda f: re.compile(r'\.(zip|md)$', re.IGNORECASE).search(f)
+        if not valid(upload.name):
+            raise forms.ValidationError('Must be a .zip or a .md file')
+
+        return upload

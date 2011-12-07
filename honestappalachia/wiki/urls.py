@@ -10,4 +10,6 @@ urlpatterns = patterns('wiki.views',
     url(r'^(?P<name>%s)/delete/$' % WIKI_WORD, 'delete', name="delete"),
     url(r'^media/$', 'media_index', name="media_index"),
     url(r'^media/upload/$', 'media_upload', name="media_upload"),
+    url(r'^bulk/upload/$', 'bulk_upload', name="bulk_upload"),
+    url(r'^bulk/download/$', 'bulk_download', name="bulk_download"),
 )

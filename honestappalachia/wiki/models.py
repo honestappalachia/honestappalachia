@@ -10,7 +10,7 @@ class Page(models.Model):
     '''
     A Wiki page 
     '''
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100) # should be unique=True
     content = models.TextField()
     rendered = models.TextField(editable=False)
     created_on = models.DateTimeField(auto_now_add=True)
