@@ -14,3 +14,27 @@ p, img, ol, ul, h1, h2, h3, h4, h5, h6 {
   margin-top:24px;
   margin-bottom:24px;
 }
+
+h1 {
+  font-size: 2em;
+  line-height: 0.75em;
+  border-bottom:3px solid #CAD6ED;
+  padding-bottom:4px;
+  margin-bottom:17px;
+}
+h2 {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+h3 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+}
+h4 {
+  font-size: 1.125em;
+  line-height: 1.333em;
+}
+h5, h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+}

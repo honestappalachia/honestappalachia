@@ -9,7 +9,7 @@ p {
 }
 
 /* Homepage header */
-.header { text-align:center; font-size:3em; margin-bottom:8px;}
+.header { text-align:center; font-size:3em; margin-bottom:8px; margin-bottom:24px; padding-bottom:0; border-bottom:none;}
 
 /* Homepage logo */
 .logo { 
