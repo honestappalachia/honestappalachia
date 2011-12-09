@@ -3,14 +3,43 @@
 {% block title %}Donate{% endblock %}
 
 {% block content %}
-We appreciate your support!
+<h1>Donate</h1>
 
-<h1>Donate to us via Paypal:</h1>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<p>
+If you would like to support the project, please consider donating!
+At the moment, we accept donations via Paypal. Click the button below to donate to us securely.
+You can use your Paypal account or a credit/debit card.
+</p>
+
+<form class="center" action="https://www.paypal.com/cgi-bin/webscr" method="post">
     <input type="hidden" name="cmd" value="_s-xclick">
     <input type="hidden" name="hosted_button_id" value="X4RYYFR24G3FS">
     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
+<br>
+
+<p>
+We appreciate your support!
+</p>
+
+<p>
+Our current development is supported by a generous grant from the <a href="http://sunlightfoundation.com/">Sunlight Foundation</a>, a Washington D.C.-based group that develops digital tools to empower citizens to hold their governments accountable.
+</p>
+
+<h2>Why Donate?</h2>
+
+<p>Maintaing a secure website incurs a lot of costs, such as:</p>
+
+<ul>
+    <li>servers to host our websites</li>
+    <li>SSL certificates to encrypt Internet communications</li>
+    <li>computer hardware</li>
+    <li>domain names</li>
+</ul>
+
+<p>
+At the moment, our wishlist includes more and better-situated servers, which would allow us to make Honest Appalachia a more secure and reliable platform for protecting the anonymity of its users.
+</p>
 
 {% endblock %}
