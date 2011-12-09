@@ -86,3 +86,8 @@ p {
   text-align: center;
 }
 
+.warning {
+  background:#EBA4A4;
+  border:2px solid #ED5151;
+  padding:5px;
+}
