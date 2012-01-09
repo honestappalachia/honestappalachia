@@ -18,12 +18,13 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', direct_to_template, { 'template': 'home.html' }, name='home'),
-    url(r'^news/$', redirect_to, {'url': 'https://blog.honestappalachia.org'},
-        name="news"),
+    url(r'^about-us/$', direct_to_template, { 'template': 'about-us.html' },
+        name="about-us"),
     url(r'^upload/$', 'honestappalachia.views.upload', name="upload"),
     url(r'^contact/$', direct_to_template, { 'template': 'contact.html' }, name="contact"),
     url(r'^donate/$', direct_to_template, { 'template': 'donate.html' }, name="donate"),
-    url(r'^wiki/', include('wiki.urls')),
+
+    #url(r'^wiki/', include('wiki.urls')),
 )
 
 # django.contrib.auth
