@@ -38,9 +38,26 @@ h5, h6 {
   font-size: 1em;
   line-height: 1.5em;
 }
-ul { list-style: square; }
+ul { list-style: disc; }
 
 /* Center text */
 .center {
   text-align: center;
 }
+
+img.caution {
+  float:left;
+  padding:16px;
+}
+p.caution {
+  font-weight:bold;
+}
+.warning {
+  background:#EBA4A4;
+  border:2px solid #ED5151;
+  padding:24px 0px;
+}
+.bold {
+  font-weight:bold;
+}
+.ok { background:#C4FFC9; border:2px solid #73FF7E; padding:24px; }
