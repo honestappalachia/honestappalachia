@@ -146,6 +146,7 @@ LOGGING = {
 }
 
 # Import deployment-specific settings, if they exist
+HIDDEN_SERVICE_ADDR = ''
 try:
     from local_settings import *
 except ImportError:
