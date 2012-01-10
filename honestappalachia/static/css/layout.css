@@ -60,6 +60,6 @@ p.caution {
 .bold {
   font-weight:bold;
 }
-.ok { background:#C4FFC9; border:2px solid #73FF7E; padding:24px; }
+.ok { background:#C4FFC9; border:2px solid #73FF7E; padding:8px; }
 
 .social { margin:0 5px; }
