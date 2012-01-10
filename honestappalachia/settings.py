@@ -146,7 +146,10 @@ LOGGING = {
 }
 
 # Import deployment-specific settings, if they exist
+
+# Prefix with http:// so it redirects properly
 HIDDEN_SERVICE_ADDR = ''
+
 try:
     from local_settings import *
 except ImportError:
