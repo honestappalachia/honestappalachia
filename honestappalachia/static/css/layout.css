@@ -55,7 +55,7 @@ p.caution {
 .warning {
   background:#EBA4A4;
   border:2px solid #ED5151;
-  padding:24px 0px;
+  padding:8px;
 }
 .bold {
   font-weight:bold;
@@ -63,3 +63,14 @@ p.caution {
 .ok { background:#C4FFC9; border:2px solid #73FF7E; padding:8px; }
 
 .social { margin:0 5px; }
+
+p.blackout {
+    background: #333;
+    border: 8px solid #555;
+    color: #efefef;
+    padding:8px;
+    font:15px/1.4 sans-serif;
+}
+
+p.blackout a { color: #ccc; }
+p.blackout a:hover { color: #69f; }
