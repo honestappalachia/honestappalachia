@@ -28,11 +28,11 @@ urlpatterns = patterns('',
 )
 
 # django.contrib.auth
-urlpatterns += patterns('',
-    url(r'^accounts/login/$', 'django.contrib.auth.views.login', name="login"),
-    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', name="logout"),
-    url(r'^accounts/profile/$', 'wiki.views.user_profile', name="profile"),
-)
+#urlpatterns += patterns('',
+#    url(r'^accounts/login/$', 'django.contrib.auth.views.login', name="login"),
+#    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', name="logout"),
+#    url(r'^accounts/profile/$', 'wiki.views.user_profile', name="profile"),
+#)
 
 if settings.DEBUG:
     urlpatterns += patterns('',
