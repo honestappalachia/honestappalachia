@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add a story</title>
+    <style type="text/css">
+      html { height:100%; }
+      body { height:100%; margin:0; padding: 0;}
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmIfwiTCRLjWY69UZ1FsZ8Ir2C-tZqLIs&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var myOptions = {
+          center: new google.maps.LatLng(38.307181, -81.14502),
+          zoom: 6,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        var stories = [
+          {% for story in stories %}
+            { "desc": "{{ story.description }}", "lat": {{ story.lat }}, "lng": {{ story.lng }}, "date": "{{ story.created}}" },
+          {% endfor %}
+        ];
+        for (var i=0; i < stories.length; i++) {
+          var infowindow = new google.maps.InfoWindow({
+            content: "<p>" + stories[i]["desc"] + "</p><p><em>Posted " + stories[i]["date"] + "</em></p>"
+          });
+          var marker = new google.maps.Marker({
+            map:map,
+            position: new google.maps.LatLng(stories[i]["lat"], stories[i]["lng"]),
+            title: stories[i]["desc"],
+          });
+          (function (marker, infowindow) {
+          google.maps.event.addListener(marker, 'click', function () {
+            infowindow.open(map, marker);
+          });
+          })(marker, infowindow);
+        }
+      }
+    </script>
+  </head>
+  <body onload="initialize()">
+    {% block content %}
+    <div id="map_canvas" style="min-width:600px; min-height:400px; width:90%; height:80%; margin:0 auto;"></div>
+    <form action="" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Submit" />
+    </form>
+    {% endblock %}
+  </body>
+</html>

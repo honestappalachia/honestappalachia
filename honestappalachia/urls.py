@@ -3,8 +3,8 @@ from django.views.generic.simple import direct_to_template, redirect_to
 from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', direct_to_template, { 'template': 'home.html' }, name='home'),
     url(r'^about-us/$', direct_to_template, { 'template': 'about-us.html' },
@@ -25,6 +25,8 @@ urlpatterns = patterns('',
     url(r'^donate/$', direct_to_template, { 'template': 'donate.html' }, name="donate"),
 
     #url(r'^wiki/', include('wiki.urls')),
+
+    url(r'^wanted/', include('wanted.urls')),
 )
 
 # django.contrib.auth
